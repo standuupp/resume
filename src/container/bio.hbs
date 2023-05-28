@@ -1,0 +1,102 @@
+<div>
+  <section></section>
+    <h1>{{name}}</h1>
+    <br />
+    {{birthdate}}
+    <br />
+    {{birthplace}}
+    <br />
+    {{deathdate}}
+    <br />
+    {{deathplace}}
+    <br />
+    {{nationality}}
+    <br />
+    {{occupation}}
+  </section>
+    <hr />
+    {{> title data="Known for"}}
+      {{#each known_for}}
+        <br>
+        {{this}}
+      {{/each}}
+        <hr>
+    {{> title data="Education"}}
+      {{#each education}}
+      {{degree}}
+      <br>
+      {{field}}
+      <br>
+      {{institution}}
+      <br>
+      {{year}}
+      {{/each}}
+       <hr>
+    {{> title data="Notable publications"}}
+      {{#each notable_publications}}
+      {{title}}
+      <br>
+      {{year}}
+      <br>
+      {{publisher}}
+      <br>
+      {{/each}}
+       <hr>
+    {{> title data="Partners"}}
+      {{#each partners}}
+      {{name}}
+      <br>
+      {{relationship}}
+      <br>
+      {{years}}
+      <br>
+      {{/each}}
+      <hr>
+    {{> title data="Awards"}}
+      {{#each awards}}
+       {{title}}
+       <br>
+       {{year}}
+       <br>
+       {{description}}
+       <br>
+      {{/each}}
+      <hr>
+    {{> title data="Influences"}}
+      {{#each influences}}
+      <br>
+      {{this}}
+      {{/each}}
+      <hr>
+    {{> title data="Influenced"}}
+      {{#each influenced}}
+      <br>
+      {{this}}
+      {{/each}}
+      <hr>
+    {{> title data="Quotes"}}
+      {{#each quotes}}
+      <br>
+      {{this}}
+      {{/each}}
+      <hr>
+    {{> title data="Major discoveries"}}  
+      {{#each major_discoveries}}
+       {{title}}
+       <br>
+       {{year}}
+       <br>
+       {{description}}
+      {{/each}}
+      <hr>
+    {{> title data="Contributions"}}
+      {{#with contributions}}
+        {{title}}
+        <br>
+        {{description}}
+        <br>
+        {{year}}
+        <br>
+        {{field}}
+      {{/with}}
+</div>

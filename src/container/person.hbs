@@ -2,49 +2,49 @@
   <section>
       {{#with person}}
           <h1>{{name}}</h1>
-          Age:{{age}}
+          {{age}}
           <br />
-          Gender:{{gender}}
+          {{gender}}
           <br />
           <hr>
 
           <h2>Address</h2>
           {{#with address}}
-            Street:{{street}}
+            {{street}}
             <br />
-            City:{{city}}
+            {{city}}
             <br />
-            State:{{state}}
+            {{state}}
             <br />
-            Zip:{{zip}}
+            {{zip}}
             <br />
-            Country:{{country}}
+            {{country}}
           {{/with}}
           <hr> 
 
         {{> title data= "Education"}}         
           {{#each education}}
               <div>
-                Degree:{{degree}} 
+                {{degree}} 
                 <br>
-                Major:{{major}}
+                {{major}}
                 <br>
-                University:{{university}}
+                {{university}}
                 <br> 
-                GraduationYear:{{graduationYear}}
+                {{graduationYear}}
               </div>
           {{/each}}
           <hr>
 
           {{> title data="WorkExperience"}}
               {{#each workExperience}}
-               Company:{{company}}
+               {{company}}
                <br>
-               Title:{{title}}
+               {{title}}
                <br>
-               StartDate:{{startDate}}
+               {{startDate}}
                <br>
-               EndDate:{{endDate}}
+               {{endDate}}
                <br>
                {{#each responsibilities}}
                <br>
@@ -121,9 +121,9 @@
                   {{/each}}
                 {{/each}}          
               {{/each}}
-            {{/each}}
-         
-        
+            {{/each}}   
+            
+                 
     {{/with}}
   </section>
 </div>
