@@ -1,0 +1,111 @@
+<div>
+  {{#with program}}   
+     {{#with excursion}}           
+          <h1>{{name}}</h1>
+          <br />
+          <ul>
+          <li>
+          {{#with location}}
+            City:{{city}}
+            <br />
+            Country:{{country}}
+          {{/with}}
+          <br />
+          Date:{{date}}
+          <br />
+          <ul>              
+          {{#each program}}
+            <br>
+            <li>
+            Name:{{name}}
+            <br />
+            Type:{{type}}
+            <br />
+            Duration:{{duration}}
+              <ul>
+            {{#with details}}
+              {{#if museum}}
+                {{#with museum}}
+                  <br />
+                  <li>
+                  Name:{{name}}
+                  {{#with location}}
+                    <br />
+                    Address:{{address}}
+                    <br />
+                    City:{{city}}
+                    <br />
+                    Country:{{country}}                  
+                  {{/with}}                
+                  <br />
+                  <ul>
+                  <br>
+                  {{#each exhibits}}
+                    <li>
+                    Name:{{name}}
+                    <br>
+                    Artist:{{artist}}
+                    <br />
+                    Description:{{description}}
+                    <br />                     
+                    {{#if audio_guide}} {{/if}}
+                    <br />
+                  {{/each}}                  
+                {{/with}}                         
+                <br>
+                <ul>
+                {{#with guide}}           
+                  <li>
+                  Name:{{name}}
+                  <br />
+                  Language:{{language}}
+                  <br />
+                  Rating:{{rating}}
+                  <br />                
+                {{/with}}
+              {{/if}}   
+            {{/with}}
+            <br>
+            {{#with details}}
+              {{#if venue}}
+                {{#with venue}}
+                  <br />
+                  <li>
+                  Name:{{name}}
+                  {{#with location}}
+                    <br />
+                    Address:{{address}}
+                    <br />
+                    City:{{city}}
+                    <br />
+                    Country:{{country}}
+                    <br />
+                  {{/with}}
+                {{/with}}
+                <ul>                
+                {{#each performers}}                
+                  <br />
+                  <li>
+                  Name:{{name}}
+                  <br />
+                  Type:{{type}}
+                  <br />                               
+                {{/each}}               
+                  <ul>
+                  {{#with guide}}
+                  <br />
+                  <li>
+                  Name:{{name}}
+                  <br />
+                  Language:{{language}}
+                  <br />
+                  Rating:{{rating}}
+                {{/with}}
+              {{/if}}
+            {{/with}}
+          {{/each}}
+          </li>
+          </ul>
+    {{/with}}
+  {{/with}}
+</div>
