@@ -1,0 +1,104 @@
+<div>
+  <h1>{{name}}</h1>
+  {{#each users}}
+    <hr />
+    <strong>Users</strong>
+    <br />
+    id:{{id}}
+    <br />
+    name:{{name}}
+    <br />
+    gender:{{gender}}
+    <br />
+    age:{{age}}
+    {{#each friends}}
+      <hr />
+      <strong>Friends</strong>
+      <br />
+      id:{{id}}
+      <br />
+      name:{{name}}
+      <br />
+      gender:{{gender}}
+      <br />
+      age:{{age}}
+      {{#each mutual_friends}}
+        <hr />
+        <strong>Mutual Friends</strong>
+        <br />
+        id:{{id}}
+        <br />
+        name:{{name}}
+        <br />
+        gender:{{gender}}
+        <br />
+        age:{{age}}
+        {{#if mutual_friends}}
+          <hr />
+          <strong>Mutual Friends</strong>
+          {{#each mutual_friends}}
+            <br />
+            id:{{id}}
+            <br />
+            name:{{name}}
+            <br />
+            gender:{{gender}}
+            <br />
+            age:{{age}}
+          {{/each}}
+        {{/if}}
+      {{/each}}
+      {{#if groups}}
+        <hr />
+        <strong>Group</strong>
+        {{#each groups}}
+          <br />
+          id:{{id}}
+          <br />
+          name:{{name}}
+          <br />
+          description:{{description}}
+          <br />
+          {{#each members}}
+            <hr />
+            <strong>Members</strong>
+            <br />
+            id:{{id}}
+            <br />
+            name:{{name}}
+            <br />
+            gender:{{gender}}
+            <br />
+            age:{{age}}
+            <br />
+          {{/each}}
+        {{/each}}
+      {{/if}}
+    {{/each}}
+    {{#if groups}}
+      <hr />
+      <strong>Groups</strong>
+      {{#each groups}}
+        <br />
+        id:{{id}}
+        <br />
+        name:{{name}}
+        <br />
+        description:{{description}}
+        {{#each members}}
+          <hr />
+          <strong>Members</strong>
+          <br />
+          id:{{id}}
+          <br />
+          name:{{name}}
+          <br />
+          gender:{{gender}}
+          <br />
+          age:{{age}}
+          <br />
+        {{/each}}
+      {{/each}}
+    {{/if}}
+  {{/each}}
+</div>
