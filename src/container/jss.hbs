@@ -1,0 +1,54 @@
+<div>
+  <br>
+    {{name}}
+    <br>
+    {{description}}
+    <br>
+    {{#with history}}
+      <br>
+      Year:{{year}}
+      <br>
+      Fouder:{{founder}}
+    {{/with}}
+      <hr>
+    {{#each types}}
+      <br>
+      {{this}}
+    {{/each}}
+      <hr>
+    {{#with syntax}}
+      <br>
+      {{variables}}
+      <br>
+      {{functions}}
+      <br>
+      {{conditionals}}
+      <br>
+      {{loops}}
+      <br>
+      {{classes}}
+    {{/with}}
+      <hr>
+    {{#each features}}
+      <br>
+      {{this}}
+    {{/each}}
+      <hr>
+    {{#each libraries}}
+      <br>
+      {{this}}
+    {{/each}}
+      <hr>
+    {{#each tools}}
+      <br>
+      {{this}}
+    {{/each}}
+      <hr>
+    {{#each community}}
+      <br>
+      Name:{{name}}
+      <br>
+      Type:{{type}}
+    {{/each}}
+  </br>
+</div>
