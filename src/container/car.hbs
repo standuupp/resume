@@ -1,0 +1,151 @@
+<div>
+  <br />
+  Make:{{make}}
+  <br />
+  Model:{{model}}
+  <br />
+  Year:{{year}}
+  <br />
+  Color:{{color}}
+  <hr />
+  {{#with features}}
+    {{#with interior}}
+      {{#with seats}}
+        Material:{{material}}
+        <br />
+        Color:{{color}}
+        <br />
+        Heated:{{#if heated}}{{/if}}
+        <br />
+        Ventilated:{{#if ventilated}}{{/if}}
+      {{/with}}
+      <hr />
+      {{#with dashboard}}
+        Material:{{material}}
+        <br />
+        Color:{{color}}
+        <br />
+        {{#with display}}
+          Type:{{type}}
+          <br />
+          Size:{{size}}
+          <br />
+          Resolution:{{resolution}}
+          <br />
+          Touchscreen:{{#if touchscreen}}{{/if}}
+        {{/with}}
+      {{/with}}
+      <hr />
+      {{#with audio}}
+        System:{{system}}
+        <br />
+        Speakers:{{speakers}}
+        <br />
+        Subwoofer:{{#if subwoofer}}{{/if}}
+        <br />
+        Bluetooth:{{#if bluetooth}}{{/if}}
+        <br />
+        Usb:{{#if USB}}{{/if}}
+      {{/with}}
+    {{/with}}
+    <hr />
+    {{#with exterior}}
+      {{#with wheels}}
+        Size:{{size}}
+        <br />
+        Type:{{type}}
+        <br />
+        Color:{{color}}
+      {{/with}}
+      <hr />
+      {{#with headlights}}
+        Type:{{type}}
+        <br />
+        Brightness:{{brightness}}
+        <br />
+        Automatic:{{#if automatic}}{{/if}}
+      {{/with}}
+      <hr />
+      {{#with sunroof}}
+        <br />
+        Type:{{type}}
+        <br />
+        Size:{{size}}
+        <br />
+        Automatic:{{#if automatic}}{{/if}}
+      {{/with}}
+    {{/with}}
+    {{#with safety}}
+      <hr />
+      {{#with airbags}}
+        Front:{{front}}
+        <br />
+        Side:{{side}}
+        <br />
+        Knee:{{knee}}
+        <br />
+        Rear:{{rear}}
+      {{/with}}
+      <hr />
+      {{#with assistance}}
+        Blind spot monitoring:{{#if
+          blind_spot_monitoring
+        }}{{/if}}
+        <br />
+        Rear cross traffic alert:{{#if
+          rear_cross_traffic_alert
+        }}{{/if}}
+        <br />
+        Lane departure warning:{{#if
+          lane_departure_warning
+        }}{{/if}}
+        <br />
+        Adaptive cruise control:{{#if
+          adaptive_cruise_control
+        }}{{/if}}
+        <br />
+        Collision warning:{{#if collision_warning}}{{/if}}
+      {{/with}}
+    {{/with}}
+  {{/with}}
+  <hr />
+  {{#with engine}}
+    Type:{{type}}
+    <br />
+    Displacement:{{displacement}}
+    <br />
+    Horsepower:{{horsepower}}
+    <br />
+    Torque:{{torque}}
+    <hr />
+    {{#with transmission}}
+      Type:{{type}}
+      <br />
+      Gears:{{gears}}
+    {{/with}}
+  {{/with}}
+  <hr />
+  {{#with fuel_economy}}
+    City:{{city}}
+    <br />
+    Highway:{{highway}}
+    <br />
+    Combined:{{combined}}
+  {{/with}}
+  <hr />
+  {{#with price}}
+    Base:{{base}}
+    <br />
+    Destination:{{destination}}
+    <hr />
+    {{#with options}}
+      Navigaion:{{navigation}}
+      <br />
+      Moonroof:{{moonroof}}
+      <br />
+      Premium paint:{{premium_paint}}
+    {{/with}}
+    <br />
+    Total:{{total}}
+  {{/with}}
+</div>
