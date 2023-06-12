@@ -1,18 +1,5 @@
 <main>
-  {{#with navigation}}
-    <div class='card'>
-      <div class='nav'>
-        {{#each links}}
-          <div class='nav-item'>
-            <a href='{{href}}' class='nav-link'>{{text}}</a>
-          </div>
-        {{/each}}
-          <div class='nav-item'>
-            <a href="{{href}}" class='nav-link disabled'>Disabled</a>
-          </div>
-      </div>
-    </div>
-  {{/with}}
+  
   {{#with newsBlock}}
     <div class='display-3 text-center'>{{title}}</div>
       <div class='row'>
@@ -47,8 +34,9 @@
           <div class="card">      
             <div class="card-body">
               <img class="card img-top" src="https://picsum.photos/275/100" alt="Product photo">
-                <h6>{{title}}<span class='badge text-bg-warning rounded-pill text-uppercase text-light m-1'>{{#if isHot}}Hot!{{/if}}</span>
-                <span class='badge text-bg-primary rounded-pill ms-1'>{{#if isNew}}Нове{{/if}}</span></h6>
+                {{title}}
+                <span class='badge text-bg-warning rounded-pill text-uppercase text-light m-1'>{{#if isHot}}Hot!{{/if}}</span>
+                <span class='badge text-bg-primary rounded-pill ms-1'>{{#if isNew}}Нове{{/if}}</span>
                 {{description}}
             </div>
           </div>
@@ -81,19 +69,12 @@
             </section>
         {{/each}}
     </div>
-  {{/with}}
-  <hr>
-  <div class="row">
-    {{#each footer}}
-      <div class="nav col-2">
-        <div>
-          {{#each this}}
-            <div>
-              <a class="nav-link {{#if @last}} disabled {{/if}}" href="{{this.link}}">{{this.text}}</a> 
-            </div>
-          {{/each}}
-        </div>
-      </div>
-    {{/each}}
-  </div>
-</main>
+ {{/with}}
+
+
+
+
+
+ </main> 
+
+
