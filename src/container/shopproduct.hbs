@@ -1,0 +1,129 @@
+<main>
+  {{#with navigation}}
+    <div class='card'>
+      <div class='nav'>
+        {{#each links}}
+          <div class='nav-item'>
+            <a href='{{href}}' class='nav-link'>{{text}}</a>
+          </div>
+        {{/each}}
+          <div class='nav-item'>
+            <a href="{{href}}" class='nav-link disabled'>Disabled</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/with}}
+    <div class='col-6 mt-4 ms-4'>
+      <div class="nav">
+        <ol class='breadcrumb'>
+          {{#each breadcrumb}}
+            <li class='breadcrumb-item'>
+              <a class="nav-link {{#if @last}} disabled {{/if}}" href=" {{url}} "> {{name}} </a>
+            </li> 
+          {{/each}}
+        </ol>  
+      </div>
+    </div>
+  {{#with productData}}
+    <div class="row">    
+      <img class=" img-top col-6" src="https://picsum.photos/400/200" alt="Product photo">
+          <div class="col-6 ps-5">
+            {{#with item}}
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    {{#each head}}
+                      <th>
+                        {{this}}
+                      </th>
+                    {{/each}}       
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each body}}
+                    <tr>
+                      {{#each this}}
+                        <td>
+                          {{this}}
+                        </td>
+                      {{/each}}
+                    </tr>
+                  {{/each}}
+                </tbody>
+              </table>
+            {{/with}}        
+            <section class="px-0 pt-0">
+              <div class="card ">            
+                {{#with param}}
+                <div class="card-header">
+                  <h5>{{title}}</h5>
+                </div>
+                  <ul class="list-group">
+                    {{#each list}}
+                      <li class="list-group-item">
+                        {{this}}
+                      </li>
+                    {{/each}}
+                  </ul>            
+                {{/with}}
+              </div>
+            </section>
+              <div class="px-0">
+                {{#with alert}}
+                  <div class="alert alert-danger">
+                    {{#if isError}} {{text}} {{/if}}
+                  </div>           
+                {{/with}}
+              </div>          
+          </div>          
+          <div class="card mt-3 col-6 mx-2 ">
+              {{#with info}}
+              <div class="card-body">
+                <h3>{{title}}</h3>
+                <p>{{about}}</p>
+                <h3>{{price}}</h3>        
+                {{#each category}}
+                  <span class='badge text-bg-warning  text-light rounded-pill text-uppercase '>{{#if isHot}} {{name}} {{/if}}</span>
+                  <span class='badge text-bg-primary rounded-pill '>{{#if isNew}} {{name}} {{/if}}</span>
+                  <span class='badge text-bg-info text-light rounded-pill '>{{#if isBonus}} {{name}} {{/if}}</span>
+                {{/each}}
+                </div>
+              {{/with}}            
+          </div>
+          <div class="card mt-4 col-12 mb-5">
+          <div class="card-body">
+            {{#each actionList}}      
+              {{#if isWarning}}<span class='btn btn-warning text-light me-3'> {{name}} </span>{{/if}}
+              {{#if isError}}<span class='btn btn-outline-danger text-danger me-3'>{{name}} </span>{{/if}}
+              {{#if isSuccess}}<span class='btn btn-success text-light me-3'>{{name}} </span>{{/if}}
+              {{#if isGood}}<span class='btn btn-outline-success text-success'> {{name}} </span>{{/if}}
+            {{/each}}
+          </div>
+        </div>      
+    </div>
+  {{/with}}
+  <hr>
+  {{#with goodsOtherBlock}}
+    <h3 class="text-center mt-5">{{title}}</h3>
+      <div class="row">
+        {{#each cards}}
+          <div class="col-4 g-2">
+            <div class="card">      
+              <div class="card-body">
+                <img class="card img-top" src="https://picsum.photos/275/100" alt="Product photo">
+                  {{title}}
+                  {{> shopcard}}
+                  {{description}}
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+  {{/with}}
+  <hr>
+  {{> shopaction}}         
+</main>
+
+
+
