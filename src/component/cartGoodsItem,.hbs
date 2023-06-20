@@ -1,0 +1,31 @@
+<div class="card mt-4">
+	<div class="card-body">
+        <div class="row"> 
+            <div class="col-2">
+              <img class="card img-top" src="https://picsum.photos/110/110" alt="Product photo">
+            </div>
+            <div class="col-4">
+              <h6><{{name}}/h6>
+              <p>{{description}}</p>
+            </div>
+            {{#with price}}
+              <div class="col-3">
+                {{title}}
+                {{value}}
+              </div>
+            {{/with}}
+              <div class="col-1"> 
+                {{amount}}
+              </div>
+              <div class="col-2">
+                <div class="mt-2">
+                  {{#each buttons}}
+                    <div class="mt-2"></div>                
+                      {{#if isPrimary}}<button class="btn btn-primary">{{text}}</button>{{/if}}
+                      {{#if isDanger}}<button class="btn btn-outline-danger">{{text}}</button>{{/if}}
+                  {{/each}}
+                </div>
+              </div>  
+        </div>
+    </div>
+</div>
