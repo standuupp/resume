@@ -1,0 +1,92 @@
+<main>
+  {{#with header}}
+    <div class="display-2">{{title}}</div> 
+    {{#with button}}
+      <section>
+        <a href:='{{link}}'class='btn btn-outline-secondary'>{{text}}</a>
+      </section>
+    {{/with}}
+  {{/with}}
+  <hr>  
+    {{#each goodsBlock}}
+      <div class="card mt-4">
+        <div class="card-body">
+          <div class="row"> 
+            <div class="col-2">
+              <img class="card img-top" src="https://picsum.photos/110/110" alt="Product photo">
+            </div>
+            <div class="col-4">
+              <h6><{{name}}/h6>
+              <p>{{description}}</p>
+            </div>
+            {{#with price}}
+              <div class="col-3">
+                {{title}}
+                {{value}}
+              </div>
+            {{/with}}
+              <div class="col-1"> 
+                {{amount}}
+              </div>
+              <div class="col-2">
+                <div class="mt-2">
+                  {{#each buttons}}
+                    <div class="mt-2"></div>                
+                      {{#if isPrimary}}<button class="btn btn-primary">{{text}}</button>{{/if}}
+                      {{#if isDanger}}<button class="btn btn-outline-danger">{{text}}</button>{{/if}}
+                  {{/each}}
+                </div>
+              </div>  
+          </div>
+        </div>
+      </div>
+    {{/each}}  
+  <div class="pt-4">
+    <hr>
+  </div>
+  {{#with total}}
+    <div class="p-3">
+      <h3>{{title}}</h3>
+      <h1>{{amount}}</h1>
+      <p>{{delivery}}</p>
+    </div>
+    {{#each buttons }}      
+      <section>
+        {{#if isSuccess}}<a href:='{{link}}'class='btn btn-success'>{{text}}</a>{{/if}}
+        {{#if isOutline}}<a href:='{{link}}'class='btn btn-outline-success'>{{text}}</a>{{/if}}
+      </section>
+    {{/each}}
+  {{/with}}
+  <hr>
+  {{#with goodsOtherBlock}}
+    <div class="display-2 text-center">{{title}}</div>
+    <div class="row mt-3">
+    {{#each cards}}
+      <div class="col-4 g-2">
+          <div class="card">      
+            <div class="card-body">
+              <img class="card img-top" src="https://picsum.photos/275/100" alt="Product photo">
+                <h6>{{title}}<span class='badge text-bg-warning rounded-pill text-uppercase text-light m-1'>{{#if isHot}}HOT!{{/if}}</span>
+                <span class='badge text-bg-primary rounded-pill ms-1'>{{#if isNew}}Нове{{/if}}</span></h6>
+                {{description}}
+            </div>
+          </div>
+        </div>
+    {{/each}}
+    </div>
+  {{/with}}
+  <div class="mb-3">
+    <hr>
+  </div>
+  {{#with subscribe}}
+    <div class="alert alert-dark mt-5 mb-5">
+      <h2>{{header}}</h2>
+      <p>{{description}}</p>
+        {{#each buttons}}
+            <section class="col-12 pt-1 pb-1">
+              <a href:='{{link}}'class='btn btn-primary'>{{text}}</a>
+            </section>
+        {{/each}}
+    </div>
+  {{/with}}
+</main>
