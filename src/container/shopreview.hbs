@@ -1,0 +1,182 @@
+<main>
+  <div class='row col-12'>
+    {{#with formBlock}}
+      <h1>{{header}}</h1>
+      {{#with rating}}
+        {{title}}:
+        {{value}}
+      {{/with}}
+      {{#with actionBlock}}
+        <div class='row'>
+          <div class='col-7'>
+            <div class='nav nav-tabs mt-5 mb-5'>
+              {{#each tabs}}
+                <div class='nav-item active'>
+                  <a href='#' class='nav-link'>{{text}}</a>
+                </div>
+              {{/each}}
+            </div>
+          </div>
+        </div>
+        <div class='col-7'>
+          <hr />
+        </div>
+        {{#with report}}
+          <div class='card col-7 mb-5 mt-5'>
+            <div class='card-body'>
+              {{title}}
+              <div class='mt-2'>
+                {{#with button}}
+                  <a
+                    href:='{{link}}'
+                    class='btn btn-dark'
+                  >{{text}}</a>
+                {{/with}}
+              </div>
+            </div>
+          </div>
+        {{/with}}
+      {{/with}}
+      {{#with goodsInfo}}
+        <div class='col-3'>
+          <div class='card'>
+            <div class='card-body'>
+              <img
+                class='card img-top'
+                src='https://picsum.photos/110/110'
+                alt='Product photo'
+              />
+              {{name}}
+            </div>
+          </div>
+          <div class='card mb-2 mt-2'>
+            <div class='card-body'>
+              {{price}}
+              {{#each buttons}}
+                <div>
+                  {{#if isPrimary}}<a
+                      href:='{{link}}'
+                      class='btn btn-primary'
+                    >{{text}}</a>{{/if}}
+                  {{#if isSecondary}}<a
+                      href:='{{link}}'
+                      class='btn btn-secondary'
+                    >{{text}}</a>{{/if}}
+                </div>
+              {{/each}}
+            </div>
+          </div>
+          {{#with seller}}
+            <div class='card'>
+              <div class='card-body'>
+                {{title}}
+                <strong>{{value}}</strong>
+              </div>
+            </div>
+          {{/with}}
+        </div>
+      {{/with}}
+      <div class='col-7'>
+        <hr />
+      </div>
+      <div class='row mt-4 col-7'>
+        {{#with feedbackBlock}}
+          <h2>{{title}}</h2>
+          {{#each buttons}}
+            <div class='col-4 mt-5 mb-4'>
+              {{#if isWarning}}<a
+                  href:='{{link}}'
+                  class='btn btn-warning'
+                >{{text}}</a>{{/if}}
+              {{#if isSuccess}}<a
+                  href:='{{link}}'
+                  class='btn btn-success'
+                >{{text}}</a>{{/if}}
+              {{#if isDanger}}<a
+                  href:='{{link}}'
+                  class='btn btn-danger'
+                >{{text}}</a>{{/if}}
+            </div>
+          {{/each}}
+        {{/with}}
+      </div>
+      <div>
+        <hr />
+      </div>
+    {{/with}}
+  </div>
+  {{#each reviewList}}
+    <div class='card'>
+      <div class='card-body'>
+        {{#with title}}
+          <div class='card'>
+            <div class='card-body'>
+              {{userName}}
+              <p>{{caption}}</p>
+              {{date}}
+            </div>
+          </div>
+        {{/with}}
+        {{#with reviewBody}}
+          <div class='card'>
+            <div class='card-body'>
+              {{#with seller}}
+                {{title}}:{{value}}
+              {{/with}}
+              {{#with rating}}
+                <p class='mt-2'>{{title}} {{value}}</p>
+              {{/with}}
+              {{#each text}}
+                {{this}}
+              {{/each}}
+              {{#with advantages}}
+                <p class='mt-3'><strong
+                  >{{title}}:</strong></p>
+                {{text}}
+              {{/with}}
+              {{#with disadvantages}}
+                <p class='mt-3'><strong
+                  >{{title}}:</strong></p>
+                {{text}}
+              {{/with}}
+              <div class='row'>
+                {{#each images}}
+                  <div class='col-3 mt-4'>
+                    <img
+                      class='card img-top'
+                      src='https://picsum.photos/110/110'
+                      alt='Product photo'
+                    />
+                  </div>
+                {{/each}}
+              </div>
+            </div>
+          </div>
+          {{#each coments}}
+            <div class='card mt-4 ms-5'>
+              <div class='card-body'>
+                <p>{{userName}}</p>
+                <p>{{date}}</p>
+                <p>{{text}}</p>
+              </div>
+            </div>
+          {{/each}}
+        {{/with}}
+      </div>
+    </div>
+  {{/each}}
+  {{#with service}}
+    <div class='alert alert-success text-center mt-5 mb-5'>
+      <h2>{{title}}</h2>
+      <p>{{description}}</p>
+      {{#each buttons}}
+        <section class='col-12 pt-1 pb-1'>
+          <a
+            href:='{{link}}'
+            class='btn btn-primary'
+          >{{text}}</a>
+        </section>
+      {{/each}}
+    </div>
+  {{/with}}
+</main>

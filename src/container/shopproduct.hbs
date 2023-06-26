@@ -1,18 +1,5 @@
 <main>
-  {{#with navigation}}
-    <div class='card'>
-      <div class='nav'>
-        {{#each links}}
-          <div class='nav-item'>
-            <a href='{{href}}' class='nav-link'>{{text}}</a>
-          </div>
-        {{/each}}
-          <div class='nav-item'>
-            <a href="{{href}}" class='nav-link disabled'>Disabled</a>
-          </div>
-      </div>
-    </div>
-  {{/with}}
+  
     <div class='col-6 mt-4 ms-4'>
       <div class="nav">
         <ol class='breadcrumb'>
@@ -81,7 +68,7 @@
               <div class="card-body">
                 <h3>{{title}}</h3>
                 <p>{{about}}</p>
-                <h3>{{price}}</h3>        
+                <h2>{{price}}</h2>        
                 {{#each category}}
                   <span class='badge text-bg-warning  text-light rounded-pill text-uppercase '>{{#if isHot}} {{name}} {{/if}}</span>
                   <span class='badge text-bg-primary rounded-pill '>{{#if isNew}} {{name}} {{/if}}</span>
@@ -111,7 +98,7 @@
             <div class="card">      
               <div class="card-body">
                 <img class="card img-top" src="https://picsum.photos/275/100" alt="Product photo">
-                  {{title}}
+                  
                   {{> shopcard}}
                   {{description}}
               </div>
